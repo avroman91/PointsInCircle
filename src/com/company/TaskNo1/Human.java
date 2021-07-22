@@ -2,26 +2,26 @@ package com.company.TaskNo1;
 
 public class Human {
 
-    private String FamilyName;
-    private String Name;
-    private String FathersName;
+    private String familyName;
+    private String name;
+    private String fathersName;
 
     public String getFullName() {
-        return FamilyName + " " + Name + " " + (FathersName == null ? "" : FathersName);
+        return familyName + " " + name + " " + (fathersName == null ? "" : fathersName);
     }
 
     public String getShortName() {
-        return FamilyName + " " + Name.charAt(0) + "." + (FathersName == null ? "" : FathersName.charAt(0) + ".");
+        return familyName + " " + name.charAt(0) + "." + (fathersName == null ? "" : fathersName.charAt(0) + ".");
     }
 
     public Human(String name, String familyName) {
-        FamilyName = familyName;
-        Name = name;
+        this.familyName = familyName;
+        this.name = name;
     }
 
     public Human(String familyName, String name, String fathersName) {
-        FamilyName = familyName;
-        Name = name;
-        FathersName = fathersName;
+        this.familyName = familyName;
+        this.name = name;
+        this.fathersName = fathersName;
     }
 }
