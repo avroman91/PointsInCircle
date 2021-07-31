@@ -8,7 +8,7 @@ public class PointList {
 
     public void add(Point point) {
         Point[] temp = new Point[PointList.length + 1];
-        System.arraycopy(PointList, 0, temp, 0, PointList.length);
+        System.arraycopy(PointList, 0, temp, 0, PointList.length+1);
         temp[temp.length - 1] = point;
         PointList = temp;
     }
