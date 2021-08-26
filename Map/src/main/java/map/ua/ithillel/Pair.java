@@ -1,8 +1,9 @@
 package map.ua.ithillel;
 
+import java.util.Map;
 import java.util.Objects;
 
-class Pair<K, V> {
+class Pair<K, V> implements Map.Entry<K, V> {
     private K key;
     private V value;
 
@@ -11,32 +12,25 @@ class Pair<K, V> {
         this.value = value;
     }
 
+    @Override
     public K getKey() {
         return key;
     }
 
-    public void setKey(K key) {
-        this.key = key;
-    }
-
+    @Override
     public V getValue() {
         return value;
     }
 
-    public void setValue(V value) {
+    @Override
+    public V setValue(V value) {
+        V old = this.value;
         this.value = value;
+        return old;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pair<?, ?> pair = (Pair<?, ?>) o;
-        return Objects.equals(key, pair.key);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(key);
+    public String toString() {
+        return key + ": " + value;
     }
 }
