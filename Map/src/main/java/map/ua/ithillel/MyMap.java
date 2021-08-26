@@ -15,7 +15,6 @@ class MyMap<K, V> implements Iterable<Pair<K, V>> {
                 if (index != -1) current = buckets[index];
             }
 
-
             private int getNextHeadIndex(int currentHead) {
                 for (int i = currentHead + 1; i < buckets.length; i++) {
                     if (buckets[i] != null) return i;
@@ -47,7 +46,7 @@ class MyMap<K, V> implements Iterable<Pair<K, V>> {
         Node<K, V> next;
     }
 
-    private Node[] buckets = new Node[16];
+    private Node<K,V>[] buckets = new Node[16];
 
 
     private int getIndex(K key) {
@@ -77,4 +76,23 @@ class MyMap<K, V> implements Iterable<Pair<K, V>> {
             }
         }
     }
+
+
+    public boolean containsKey(K key){
+        for (int i = 0; i < buckets.length; i++) {
+            Node current = buckets[i];
+            while (current!=null){
+                if(current.pair.getKey().equals(key)){
+                    return true;
+                } else {
+                    current = current.next;
+                }
+            }
+        }
+        return false;
+    }
+//
+//    public V get(K key){
+//        return value;
+//    }
 }
