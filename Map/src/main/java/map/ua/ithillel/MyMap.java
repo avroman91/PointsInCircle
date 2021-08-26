@@ -105,4 +105,17 @@ class MyMap<K, V> implements Iterable<Pair<K, V>> {
         return null;
     }
 
+    public String keySet() {
+        StringBuilder st = new StringBuilder();
+        for (Node bucket : buckets) {
+            Node current = bucket;
+            while (current != null) {
+                st.append(current.pair.getKey()).append(", ");
+                current = current.next;
+            }
+        }
+        st.delete(st.length()-2,st.length()).append(".");
+        return st.toString();
+    }
+
 }

@@ -1,9 +1,6 @@
 package map.ua.ithillel;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
     public static void main(String[] args) {
         MyMap<String, Integer> myMap = new MyMap<>();
@@ -13,6 +10,7 @@ public class Main {
         myMap.put("petia", 1);
         System.out.println(myMap.containsKey("oleg"));
         System.out.println(myMap.get("petia"));
+        System.out.println(myMap.keySet());
 
         for (Pair<String, Integer> i : myMap) {
             System.out.println(i);
