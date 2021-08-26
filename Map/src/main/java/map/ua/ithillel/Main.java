@@ -12,6 +12,7 @@ public class Main {
         myMap.put("oleh", 3);
         myMap.put("petia", 1);
         System.out.println(myMap.containsKey("oleg"));
+        System.out.println(myMap.get("petia"));
 
         for (Pair<String, Integer> i : myMap) {
             System.out.println(i);

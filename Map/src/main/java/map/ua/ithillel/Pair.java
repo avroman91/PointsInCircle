@@ -1,7 +1,6 @@
 package map.ua.ithillel;
 
 import java.util.Map;
-import java.util.Objects;
 
 class Pair<K, V> implements Map.Entry<K, V> {
     private final K key;
