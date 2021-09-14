@@ -1,0 +1,8 @@
+.gradle/
+gradle/
+.idea/
+build/
+*.iml
+gradlew
+gradlew.bat
+/src/main/java/someTestFiles/
